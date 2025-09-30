@@ -1,4 +1,7 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { WeatherResponse } from '../models/wheater-response.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -6,11 +9,12 @@ import { Injectable } from '@angular/core';
 export class OpenWeatherService {
   apiKey = '1f9ae389adee1bc8d10104f9a22449fb';
   apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+  private http = inject(HttpClient);
   constructor() { }
-  buscarInfoClimaCidadeAtual() {
+  buscarInfoClimaCidadeAtual(): Observable<WeatherResponse> {
     const urlCompleta = 
-    this.apiUrl + '?q=Dois%20Vizinhos&appid=' +this.apiKey+'&lang=pt_br&units=metrics';
+    this.apiUrl + '?q=Dois%20Vizinhos&appid=' + this.apiKey+'&lang=pt_br&units=metrics';
 
-    console.log(urlCompleta);
-}
+    return this.http.get<WeatherResponse>(urlCompleta);
+  }
 }

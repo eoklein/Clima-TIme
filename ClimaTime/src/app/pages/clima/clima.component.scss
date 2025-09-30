@@ -75,7 +75,7 @@
 button {
     margin-top: 35px;
     width: 160px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #f9ed69 0%, #f08a5d 100%);
     color: #ffffff;
     font-weight: 600;
     cursor: pointer;
@@ -88,7 +88,6 @@ button {
 
 /* Hover com efeito de brilho */
 button:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
     transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }

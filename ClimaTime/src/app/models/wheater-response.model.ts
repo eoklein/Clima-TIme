@@ -1,6 +1,7 @@
 export interface WeatherResponse {
     weather: Weather[];
     main: Main;
+    name: string;
 }
 
 export interface Weather {
@@ -17,3 +18,4 @@ export interface Main{
     temp_max: number;
     
 }
+
