@@ -4,9 +4,12 @@ import { OpenWeatherService } from '../../service/open-weather.service';
 import { Weather, WeatherResponse } from '../../models/wheater-response.model';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of, OperatorFunction } from 'rxjs';
+import { DecimalPipe, TitleCasePipe } from '@angular/common'; 
 
 @Component({
   selector: 'app-clima',
+  standalone: true,
+  imports: [DecimalPipe, TitleCasePipe],
   templateUrl: './clima.component.html',
   styleUrls: ['./clima.component.scss']
 })

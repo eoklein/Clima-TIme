@@ -13,7 +13,7 @@ export class OpenWeatherService {
   constructor() { }
   buscarInfoClimaCidadeAtual(): Observable<WeatherResponse> {
     const urlCompleta = 
-    this.apiUrl + '?q=Dois%20Vizinhos&appid=' + this.apiKey+'&lang=pt_br&units=metrics';
+    this.apiUrl + '?q=Dois%20Vizinhos,PR,BR&appid=' + this.apiKey+'&lang=pt_br&units=metric';
 
     return this.http.get<WeatherResponse>(urlCompleta);
   }
