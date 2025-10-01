@@ -1,100 +1,192 @@
 :host {
     position: fixed;
     inset: 0;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: url('https://picsum.photos/800/600') no-repeat center/cover;
+}
 
+.clima-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 24px;
+    width: 100%;
+    height: 100%;
+}
 
-    .clima-container {
-        position: relative;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: 24px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+.clima-container h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
 
-        h1 {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #000;
-            text-align: center;
-        }
+.card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px) saturate(120%);
+    transition: all 0.3s ease-in-out;
+}
 
-        .card {
-            width: 100%;
-            max-width: 420px;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.25);
+}
 
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
+.city {
+    margin: 0 0 8px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
 
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px) saturate(120%);
-        }
+button {
+    margin-top: 35px;
+    width: 150px;
+    background: linear-gradient(135deg, #f9ed69 0%, #f08a5d 100%);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+}
 
-        &:hover {
-            transform: translateX(-5px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
+.temp {
+    font-size: 3.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin: 4px 0 8px;
+    line-height: 1;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
 
-        .city {
-            margin: 0 0 8px;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
+.img-titulo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px 0 16px;
+}
 
-        button {
-            margin-top: 35px;
-            width: 150px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #ffffff;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 12px;
-            border-radius: 8px;
-            border: none;
-            background: linear-gradient(135deg, #f9ed69 0%, #f08a5d 100%);
-        }
+.desc {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.76);
+    margin: 4px 0 16px;
+}
 
-        .temp {
-            font-size: 3.25rem;
-            font-weight: 700;
-            color: #ffffff;
-            text-align: center;
-            margin: 4px 0 8px;
-            line-height: 1;
-            text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-        }
+.icon {
+    width: 52px;
+    height: 52px;
+}
 
-        .img-titulo {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin: 8px 0 16px;
-        }
+.minmax {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.76);
+}:host {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('https://picsum.photos/800/600') no-repeat center/cover;
+}
 
-        .desc {
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.76);
-            margin: 4px 0 16px;
-        }
+.clima-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 24px;
+    text-align: center;
+}
 
-        .icon {
-            width: 52px;
-            height: 52px;
-        }
+.card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px) saturate(120%);
+    transition: all 0.3s ease-in-out;
+}
 
-        .minmax{
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.76)
-        }
-    }
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.city {
+    margin-bottom: 8px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.temp {
+    font-size: 3.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 8px 0;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.img-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px 0;
+    gap: 8px;
+}
+
+.icon {
+    width: 52px;
+    height: 52px;
+}
+
+.desc {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.minmax {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 12px 0;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+button {
+    margin-top: 20px;
+    width: 150px;
+    background: linear-gradient(135deg, #f9ed69 0%, #f08a5d 100%);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
 }
