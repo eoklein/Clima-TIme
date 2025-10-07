@@ -1,15 +1,18 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouteConfigLoadEnd, Router } from '@angular/router';
-import { OpenWeatherService } from '../../service/open-weather.service';
 import { Weather, WeatherResponse } from '../../models/wheater-response.model';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of, OperatorFunction } from 'rxjs';
 import { DecimalPipe, TitleCasePipe } from '@angular/common'; 
+import { OpenWeatherService } from '../../service/open-weather.service';
+import { TempCidadeComponent } from "../../components/temp-cidade/temp-cidade.component";
+import { NomeCidadeComponent as NomeCidadeComponent } from "../../components/nome-cidade/nome-cidade.component";
+import { AppLoadingCidade } from "../../components/loading-cidade/app-loading.component";
 
 @Component({
   selector: 'app-clima',
   standalone: true,
-  imports: [DecimalPipe, TitleCasePipe],
+  imports: [DecimalPipe, TitleCasePipe, NomeCidadeComponent, NomeCidadeComponent, TempCidadeComponent, AppLoadingCidade],
   templateUrl: './clima.component.html',
   styleUrls: ['./clima.component.scss']
 })
@@ -27,12 +30,12 @@ export class ClimaComponent  {
     ),
     { initialValue: null }
   );
-
-  constructor() { }
+  mensagemCarregando: string = 'Carregando...';
 
   navegarParaTelaDePesquisa() {
     this.navegador.navigate(['/pesquisa']);
-  }
+    this.mensagemCarregando = "Carregando temperatura";
+  }
 }
 
 function pipe(arg0: OperatorFunction<unknown, unknown>): NoInfer<import("@angular/core/rxjs-interop").ToSignalOptions<WeatherResponse | null | undefined>> & { initialValue?: undefined; requireSync?: false; } {
