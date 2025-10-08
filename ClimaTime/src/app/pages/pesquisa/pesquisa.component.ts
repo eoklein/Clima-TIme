@@ -1,10 +1,18 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppClimaContainerComponent } from "../../components/clima-conteiner/clima-conteiner.component";
 
 @Component({
   selector: 'app-pesquisa',
-  imports: [],
   templateUrl: './pesquisa.component.html',
-  styleUrl: './pesquisa.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrls: ['./pesquisa.component.scss'],
+  imports: [ AppClimaContainerComponent ],
+  standalone: true,
 })
-export class PesquisaComponent { }
+export class PesquisaComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

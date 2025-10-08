@@ -1,0 +1,24 @@
+<div class="clima-container">
+
+  <div class="card">
+    @if (dadosClima()){
+      <app-nome-cidade>
+        {{dadosClima()?.name}}
+      </app-nome-cidade>
+
+      <app-temp-cidade>
+        {{dadosClima()?.main?.temp | number: '1.0-0'}}°C
+      </app-temp-cidade>
+
+      <app-img-titulo [clima]="dadosClima()!.weather[0]">
+      </app-img-titulo>
+
+      <app-min-max [main]="dadosClima()!.main">
+      </app-min-max>
+
+      <ng-content> </ng-content>
+    } @else {
+      <app-loading-cidade [mensagem] ="mensagemCarregando"> </app-loading-cidade>
+    }
+  </div>
+</div>
